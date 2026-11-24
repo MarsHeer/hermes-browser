@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Hermes Browser",
+  "version": "0.6.1",
+  "description": "Lets your Hermes agent control this browser through the Hermes Browser MCP bridge.",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0Ltqu026GQ4htVEgnBIDmqazweIj8f+RGTerKp9+wWYChCCs+7uXKgJMJQsQDbZZBdB6RgnSghLweYn7YubP4T+e4PdpC8/d3v0kgEf5RzMr0+In3ZHn3tD+O3BFRQH0LoO6AlLhueesC6tzOsDcVk31JzVOkzJrLZmY4wmeVM0j+XNkT8GCyMf208e9QyiPfM6mW9sC3yjVdhVZy697N/KGCqR5QGKt8wGRdo68n5iChN3GmPLJBqo1Wrf8e5LJMVHSbMLg0aREp4TnXeuBHAU6ZXbnudZJonX3VDupvakamldN3Y0/AYTjXR3udBSx3Ky6St3FM8pawG6+tIOy/QIDAQAB",
+  "permissions": ["debugger", "tabs", "tabGroups", "scripting", "storage", "alarms", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Hermes Browser", "default_popup": "popup.html" }
+}

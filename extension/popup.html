@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 13px system-ui, sans-serif; width: 300px; margin: 0; padding: 14px; color: #111; background: #fff; }
+    h1 { font-size: 15px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #9ca3af; }
+    .dot.connected { background: #16a34a; } .dot.connecting { background: #f59e0b; }
+    label { display: block; margin: 10px 0 4px; font-weight: 600; }
+    input[type=text], input[type=password], input[type=number] { width: 100%; box-sizing: border-box; padding: 6px; border: 1px solid #ccc; border-radius: 6px; }
+    .row { display: flex; gap: 8px; margin-top: 12px; align-items: center; }
+    button { padding: 6px 12px; border: 0; border-radius: 6px; background: #6d28d9; color: #fff; cursor: pointer; }
+    #msg { color: #555; margin-top: 8px; min-height: 1em; }
+    small { color: #666; }
+    @media (prefers-color-scheme: dark) { body { background: #1f1f23; color: #eee; } input { background: #2a2a30; color: #eee; border-color: #444 !important; } small, #msg { color: #aaa; } }
+  </style>
+</head>
+<body>
+  <h1><span class="dot" id="dot"></span>Hermes Browser</h1>
+  <div id="status">…</div>
+  <small id="paired"></small>
+  <details>
+    <summary style="margin-top:10px;cursor:pointer">Manual settings</summary>
+    <label for="token">Bridge token</label>
+    <input type="password" id="token" placeholder="filled in automatically by setup">
+    <label for="port">Port</label>
+    <input type="number" id="port" min="1" max="65535">
+  </details>
+  <div class="row" id="pauseRow" style="display:none">
+    <button id="pauseBtn" style="width:100%"></button>
+  </div>
+  <div class="row">
+    <input type="checkbox" id="enabled"><label for="enabled" style="margin:0;font-weight:400">Allow Hermes to control this browser</label>
+  </div>
+  <div class="row" style="margin-top:6px">
+    <input type="checkbox" id="visuals"><label for="visuals" style="margin:0;font-weight:400">Show Hermes' cursor and highlights on the page</label>
+  </div>
+  <div class="row"><button id="save">Save &amp; connect</button><button id="pair" style="background:#4b5563">Pair again</button></div>
+  <div id="msg"></div>
+  <small>Tabs Hermes opens go in the purple "Hermes" tab group.</small>
+  <script src="popup.js"></script>
+</body>
+</html>

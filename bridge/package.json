@@ -1,0 +1,52 @@
+{
+  "name": "hermes-browser",
+  "version": "0.6.1",
+  "description": "Let a Hermes agent (or any MCP client) control your real Chrome: one-command setup, automatic pairing, local or cloud Hermes.",
+  "type": "module",
+  "bin": {
+    "hermes-browser": "dist/cli.mjs"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "hermes",
+    "chrome",
+    "browser",
+    "agent",
+    "automation"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarsHeer/hermes-browser.git",
+    "directory": "bridge"
+  },
+  "homepage": "https://github.com/MarsHeer/hermes-browser#readme",
+  "scripts": {
+    "build": "node build.mjs",
+    "prepack": "node build.mjs",
+    "start": "node cli.mjs serve",
+    "setup": "node build.mjs && node dist/cli.mjs setup",
+    "uninstall": "node build.mjs && node dist/cli.mjs uninstall",
+    "doctor": "node cli.mjs doctor",
+    "token": "node cli.mjs token",
+    "tunnel": "node cli.mjs tunnel",
+    "test": "node test/smoke.mjs",
+    "test:live": "node test/live.mjs",
+    "test:http": "node test/http-smoke.mjs",
+    "test:peer": "node test/peer-smoke.mjs",
+    "test:package": "node test/package-smoke.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "esbuild": "^0.25.12",
+    "ws": "^8.18.0",
+    "zod": "^3.25.0"
+  }
+}
